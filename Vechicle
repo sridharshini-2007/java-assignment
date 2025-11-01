@@ -1,0 +1,49 @@
+class Vehicle {
+    String brand;
+    String model;
+  Vehicle(String brand, String model) {
+        this.brand = brand;
+        this.model = model;
+    }
+
+    void displayInfo() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+    }
+}
+class Car extends Vehicle {
+    int doors;
+    Car(String brand, String model, int doors) {
+        super(brand, model);  
+        this.doors = doors;
+    }
+  void displayCar() {
+        displayInfo();  
+        System.out.println("Number of doors: " + doors);
+    }
+}
+class Bike extends Vehicle {
+    boolean hasGear;
+
+    Bike(String brand, String model, boolean hasGear) {
+        super(brand, model);
+        this.hasGear = hasGear;
+    }
+
+    void displayBike() {
+        displayInfo(); 
+        System.out.println("Has gear: " + hasGear);
+    }
+}
+public class VehicleManagement {
+    public static void main(String[] args) {
+        Car car = new Car("Toyota", "Camry", 4);
+        Bike bike = new Bike("Honda", "Shine", true);
+
+        System.out.println("Car Details:");
+        car.displayCar();
+
+        System.out.println("\nBike Details:");
+        bike.displayBike();
+    }
+}
